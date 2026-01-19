@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flexible Visual Module</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Italiana&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+:root{
+    --primary-size-modul: 100px;
+    --secondary-size-modul: 50px;
+
+    --yellow: #F2EF63;
+    --purple: #6A5AE0;
+    --white: #ffffff;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+#uno{
+    width: 50%;
+    background-color: var(--yellow);
+}
+.italiana-regular {
+  font-family: "Italiana", sans-serif;
+  font-weight: 400;
+  font-style: normal;
+}
+a.project-link{
+    color: #6A5AE0;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+a.project-link.featured{
+    font-size: 3.5rem;
+}
+a.project-link.featured{
+    transform: scale(1.3);
+}
+.texto{
+    display: flex;
+    gap: 80px;          
+    margin-top: 80px;
+    margin-left: 50px;
+    position: relative;
+    z-index: 2;        
+}
+h1{
+    color: black;
+    margin: 20px 0 0 20px;
+    font-size: 50px;
+}
+.col-izq h2{
+    color: #6A5AE0;
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+.col-der{
+    margin-top: 40px;   
+}
+.col-der h3{
+    color: #6A5AE0;
+    margin-bottom: 20px;
+    font-size: 45px;
+}
+.container{
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+}
+#dos{
+    width: 50%;
+    background-color: var(--white);
+    display: flex;
+    flex-direction: column;
+}
+#mXL{
+    position: relative;
+    height: 50%;
+    background-color: var(--white);
+}
+#mXL{
+    position: relative;
+    height: 50%;
+    background-color: var(--white);
+}
+.innerXL{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+.innerXL .fill{
+    position: absolute;
+    top: var(--primary-size-modul);
+    bottom: var(--primary-size-modul);
+    left: var(--primary-size-modul);
+    right: var(--primary-size-modul);
+    background-color: var(--yellow);
+}
+.innerXL .top{
+    position: absolute;
+    top: var(--corner-offset);
+    left: 0;
+    width: calc(var(--primary-size-modul) * 1.4);
+    height: calc(var(--primary-size-modul) * 1.4);
+    background-color: var(--purple);
+}
+.innerXL .right{
+    position: absolute;
+    top: var(--corner-offset);
+    right: 0;
+    width: calc(var(--primary-size-modul) * 1.4);
+    height: calc(var(--primary-size-modul) * 1.4);
+    background-color: var(--purple);;
+}
+.innerXL .bottom{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: calc(var(--primary-size-modul) * 1.4);
+    height: calc(var(--primary-size-modul) * 1.4);
+    background-color: var(--purple);
+}
+.innerXL .left{
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: calc(var(--primary-size-modul) * 1.4);
+    height: calc(var(--primary-size-modul) * 1.4);
+    background-color: var(--purple);
+}
+#mXL .center{
+    position: absolute;
+    top: var(--primary-size-modul);
+    bottom: var(--primary-size-modul);
+    left: var(--primary-size-modul);
+    right: var(--primary-size-modul);
+    background-color: var(--yellow);
+}
+#mS{
+    height: 50%;
+    display: flex;
+}
+:root{
+    --xs-offset: 25%;
+    --xs-corner-size: 18%;
+}
+
+.mXS{
+    position: relative;
+    width: 50%;
+    height: 100%;
+}
+.mXS .fill{
+    position: absolute;
+    top: var(--xs-offset);
+    bottom: var(--xs-offset);
+    left: var(--xs-offset);
+    right: var(--xs-offset);
+    background-color: var(--yellow);
+}
+.mXS .corner{
+    position: absolute;
+    width: var(--xs-corner-size);
+    height: var(--xs-corner-size);
+    background-color: var(--purple);
+}
+.mXS .corner.top{
+    top: var(--xs-offset);
+    left: var(--xs-offset);
+    transform: translate(-50%, -50%);
+}
+.mXS .corner.right{
+    top: var(--xs-offset);
+    right: var(--xs-offset);
+    transform: translate(50%, -50%);
+}
+.mXS .corner.bottom{
+    bottom: var(--xs-offset);
+    right: var(--xs-offset);
+    transform: translate(50%, 50%);
+}
+.mXS .corner.left{
+    bottom: var(--xs-offset);
+    left: var(--xs-offset);
+    transform: translate(-50%, 50%);
+}
+:root{
+    --xs-sub-corner: 89%;
+}
+.mXS .corner::before{
+    content: "";
+    position: absolute;
+    width: var(--xs-sub-corner);
+    height: var(--xs-sub-corner);
+    background-color: var(--purple);
+}
+.mXS .corner.top::before{
+    top: 0;
+    left: 0;
+    transform: translate(-100%, -100%);
+}
+.mXS .corner.right::before{
+    top: 0;
+    right: 0;
+    transform: translate(100%, -100%);
+}
+.mXS .corner.bottom::before{
+    bottom: 0;
+    right: 0;
+    transform: translate(100%, 100%);
+}
+.mXS .corner.left::before{
+    bottom: 0;
+    left: 0;
+    transform: translate(-100%, 100%);
+}
+@media (min-width: 1024px) and (max-width: 489px) {
+            :root{
+               --primary-size-modul: 100px;
+            }   
+            #uno{
+                background-color: aqua;
+            }
+            .inter-header{
+                font-size: 2.6em;
+            }
+            .container{
+                flex-direction: column;
+                height: 200vh;
+            }
+            #uno,
+            #dos{
+                width: 100%;
+                flex-grow: 1;
+            }
+        }
+        @media (max-width: 480px){
+            :root{
+                --primary-size-modul: 50px;
+            }
+            .container{
+                flex-direction: column;
+                height: 200vh;
+            }
+            .inter-header{
+                font-size: 1.5em;
+            }
+            #uno{
+                width: 100%;
+                flex-grow: 1;
+            }
+            #dos{
+                width: 100%;
+                flex-grow: 1;
+            }
+        }
+a.project-link.featured{
+    display: inline-block;
+    transition: 
+        transform 0.4s ease,
+        color 0.4s ease;
+}
+a.project-link.featured:hover{
+    color: var(--white);
+    transform: translateX(12px) scale(1.1);
+}
+h1{
+    display: inline-block;
+    transition: transform 0.4s cubic-bezier(.34,1.56,.64,1);
+}
+h1:hover{
+    transform: translateY(-12px);
+}
+
+</style>
+</head>
+<body>
+<div class="container">
+    <div id="uno">
+        <header>
+            <h1> Nuria Molina Esteban</h1>
+        </header>
+        <main class="texto">
+    <section class="col-izq">
+        <h2><a class="project-link featured" href="https://nuriamolinaa.github.io/p1/">P1</a></h2>
+        <h2><a class="project-link featured" href="https://nuriamolinaa.github.io/p2/">P2</a></h2>
+        <h2><a class="project-link featured" href="https://nuriamolinaa.github.io/p3/">P3</a></h2>
+        <h2><a class="project-link featured" href="https://nuriamolinaa.github.io/poema-p5/">P5</a></h2>
+        <h2><a class="project-link featured" href="https://nuriamolinaa.github.io/p6/">P6</a></h2>
+    </section>
+    <section class="col-der">
+        <h3><a class="project-link featured" href="https://nuriamolinaa.github.io/p7/">P7</a></h3>
+        <h3><a class="project-link featured" href="https://nuriamolinaa.github.io/p8/">P8</a></h3>
+        <h3><a class="project-link featured" href="https://nuriamolinaa.github.io/p9/">P9-N</a></h3>
+        <h3><a class="project-link featured" href="https://nuriamolinaa.github.io/p9-portada/">P9-P</a></h3>
+    </section>
+</main>
+    </div>
+
+    <div id="dos">
+
+        <div id="mXL">
+
+    <div class="innerXL">
+        <div class="top"></div>
+        <div class="right"></div>
+        <div class="bottom"></div>
+        <div class="left"></div>
+        <div class="fill"></div>
+    </div>
+</div>
+
+      <div id="mS">
+    <div class="mXS">
+        <div class="corner top"></div>
+        <div class="corner right"></div>
+        <div class="corner bottom"></div>
+        <div class="corner left"></div>
+        <div class="fill"></div>
+    </div>
+
+    <div class="mXS">
+        <div class="corner top"></div>
+        <div class="corner right"></div>
+        <div class="corner bottom"></div>
+        <div class="corner left"></div>
+        <div class="fill"></div>
+    </div>
+</div>
+</div>
+</div>
+</body>
+</html>
